@@ -1,5 +1,9 @@
 # Manglish
 
+## What does it do?
+
+This is a project to provide English to Malyalam transliteration or simply said it converts manglish to malaylam. Have a look at the [website](krishnanunnir.github.io/manglish/);
+
 ## How this works?
 
 This is a front end to the varnam project with integrated autocomplete. The varnam project api is providing the suggestions, while tribute.js is used to render it as autocomplete in the front end.
