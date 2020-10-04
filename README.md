@@ -8,11 +8,11 @@ This is a project to provide English to Malyalam transliteration or simply said 
 
 Include the dependencies in the static folder
 ```
-    <script type='text/javascript' src='./static/js/editor_transliterate.js'></script>
-    <script type='text/javascript' src='./static/js/tribute.js'></script>
-    <script type='text/javascript' src='./static/js/trix.js'></script> 
-    <link rel="stylesheet" href="./static/css/tribute.css">
-    <link rel="stylesheet" href="./static/css/trix.css">
+<script type='text/javascript' src='./static/js/editor_transliterate.js'></script>
+<script type='text/javascript' src='./static/js/tribute.js'></script>
+<script type='text/javascript' src='./static/js/trix.js'></script> 
+<link rel="stylesheet" href="./static/css/tribute.css">
+<link rel="stylesheet" href="./static/css/trix.css">
 ```
 
 Add the trix editor simply by inserting
