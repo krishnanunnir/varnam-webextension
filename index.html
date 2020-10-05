@@ -7,6 +7,12 @@
     <script type='text/javascript' src='./static/js/trix.js'></script> 
     <link rel="stylesheet" href="./static/css/tribute.css">
     <link rel="stylesheet" href="./static/css/trix.css">
+    <script>
+        window.addEventListener('load', function () {
+            var tributeComplete = new TributeComplete();
+            tributeComplete.tribute.attach(document.getElementById("editor"));
+        });
+    </script>
 </head>
 <body>
     <form>
