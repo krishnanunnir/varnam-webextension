@@ -13,7 +13,7 @@ function remoteSearch(text, cb) {
         for (i = 0; i < data["result"].length; i++) {
           retval = {
             'key': text,
-            'value': data["result"][i]
+            'value': data["result"][i].trim()
           }
           result.push(retval);
         }
@@ -31,19 +31,18 @@ class TributeComplete {
 
   constructor(element) {
     this.tribute = new Tribute({
-      trigger: '@',
 
       // element to target for @mentions
       iframe: null,
 
       // class added in the flyout menu for active item
-      selectClass: 'highlight',
+      selectClass: 'activeElem',
 
       // class added to the menu container
-      containerClass: 'tribute-container',
+      containerClass: 'dropdown-content',
 
       // class added to each list item
-      itemClass: '',
+      itemClass: 'dropdown-item',
 
       // function called on select that returns the content to insert
       selectTemplate: function (item) {
@@ -88,7 +87,6 @@ class TributeComplete {
 
       // optionally specify a custom suffix for the replace text
       // (defaults to empty space if undefined)
-      replaceTextSuffix: '\n',
 
       // specify whether the menu should be positioned.  Set to false and use in conjuction with menuContainer to create an inline menu
       // (defaults to true)
@@ -105,7 +103,7 @@ class TributeComplete {
       searchOpts: {
         pre: '<span>',
         post: '</span>',
-        skip: false // true will skip local search, useful if doing server-side search
+        skip: true // true will skip local search, useful if doing server-side search
       },
       menuItemLimit: 5,
       menuShowMinLength: 0
