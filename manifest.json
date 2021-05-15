@@ -9,7 +9,15 @@
         "<all_urls>",
         "tabs"
     ],
-
+    "commands": {
+        "varnam-toggle": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+1",
+                "mac": "Ctrl+Shift+1"
+            },
+            "description": "Toggle varnam input method"
+        }
+    },
 
     "content_scripts": [{
         "matches": [
@@ -25,6 +33,12 @@
             "src/css/tribute.css"
         ],
         "run_at": "document_end"
-    }]
+    }],
+    "background": {
+        "scripts": [
+            "src/js/background.js"
+        ]
+    },
+    "browser_action": {}
 
 }

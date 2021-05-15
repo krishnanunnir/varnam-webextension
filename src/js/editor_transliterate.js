@@ -30,7 +30,8 @@ function remoteSearch(text, cb) {
 class TributeComplete {
 
     constructor(element) {
-        console.log(element);
+        this.element = element;
+        this.enabled = false;
         this.tribute = new Tribute({
 
             // element to target for @mentions
@@ -109,6 +110,28 @@ class TributeComplete {
             menuItemLimit: 5,
             menuShowMinLength: 0
         });
-        this.tribute.attach(element);
+        this.element.addEventListener('varnam-toggle', () => {
+            this.toggle();
+        });
+    }
+
+    enableTribute() {
+        this.element.style.border = '1px solid red';
+        this.tribute.attach(this.element);
+        this.enabled = true;
+    }
+
+    disableTribute() {
+        this.element.style.border = 'none';
+        this.tribute.detach(this.element);
+        this.enabled = false;
+    }
+    toggle() {
+        console.log(this.enabled);
+        if (this.enabled) {
+            this.disableTribute();
+        } else {
+            this.enableTribute();
+        }
     }
 }

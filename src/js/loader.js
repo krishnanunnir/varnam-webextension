@@ -1,6 +1,7 @@
+var browser = browser || chrome;
+
 function attach(elem) {
-    console.log(elem);
-    elem.style.border = '1px solid red';
+    elem.dataset.varnam = true;
     var tributeComplete = new TributeComplete(elem);
 }
 
@@ -21,11 +22,14 @@ function scanAndInitialize() {
     let ce = document.querySelectorAll('[contenteditable]');
     ce.forEach((elem) => attach(elem));
 }
+browser.runtime.onMessage.addListener(
+    function(request, sender, sendResponse) {
+        let activeElement = document.activeElement;
+        if (!activeElement.dataset.varnam) {
+            // New elements added to page?
+            scanAndInitialize();
+        }
+        activeElement.dispatchEvent(new Event('varnam-toggle'));
 
-window.addEventListener('load', function() {
-    scanAndInitialize();
-    const observer = new MutationObserver(list => {
-        console.log("mutation list", list);
-        document.body.dispatchEvent(evt);
-    });
-});
+    }
+);
