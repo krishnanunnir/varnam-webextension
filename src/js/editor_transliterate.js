@@ -116,7 +116,7 @@ class TributeComplete {
     }
 
     enableTribute() {
-        this.element.style.border = '1px solid red';
+        this.element.style.border = '0.5px solid red';
         this.tribute.attach(this.element);
         this.enabled = true;
     }
