@@ -1,0 +1,27 @@
+.activeElem {
+    background-color: #3273dc;
+    color: #fff !important;
+}
+
+.dropdown-item {
+    color: #4a4a4a;
+    display: block;
+    font-size: 1em;
+    line-height: 1.5;
+    padding: 0.375rem 0.5rem;
+    position: relative;
+}
+
+.dropdown-content {
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+    padding-bottom: 0.1rem;
+    padding-top: 0.1rem;
+    padding-left: 0px;
+}
+
+.dropdown-content ul {
+    margin: 0em;
+    padding: 0em;
+}
